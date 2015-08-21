@@ -67,3 +67,10 @@ Returns a list of the protocols that the implementation successfully implements.
 ### fulfillProtocols ###
 
 Returns a boolean indicator "true" if all protocols are successfully implemented.
+
+## Contribute ##
+
+Please help to improve the solution or send a Satoshi to 1DtvkCh28zqarTEUHtxs7gWtutsv2Cnf9d to feed the developers.
+
+## Contact ##
+See https://www.ausdertechnik.de for more details.
