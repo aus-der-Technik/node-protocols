@@ -1,29 +1,30 @@
 {
-	"author": "aus der Technik - Simon & Wolff GbR",
-	"main": "protocols.js",
-	"name": "node-protocols",
-	"keywords": [
-		"Protocol",
-		"Interface",
-		"Confirms"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/petershaw/node-protocols.git"
-	},
-	"description": "Protokol inplementation for node.js",
-	"scripts": {
-		"test": "find ./tests -name '*Test.js' | xargs node_modules/mocha/bin/mocha -R spec"
-	},
-	"version": "1.0.0",
-	"dependencies": {
-		"underscore": "^1.8.3",
-		"chai": "^3.0.0"
-	},
-	"devDependencies": {
-		"mocha": "^2.2.5",
-		"assert": "^1.3.0",
-		"expect": "^1.6.0"
-	},
-	"license": "MIT"
+  "author": "aus der Technik - Simon & Wolff GbR",
+  "main": "protocols.js",
+  "devDependencies": {
+    "assert": "^1.3.0",
+    "mocha": "^2.2.5",
+    "expect": "^1.6.0"
+  },
+  "scripts": {
+    "test": "find ./tests -name '*Test.js' | xargs node_modules/mocha/bin/mocha -R spec"
+  },
+  "license": "MIT",
+  "name": "node-protocols",
+  "version": "1.1.0",
+  "description": "Protokol inplementation for node.js",
+  "keywords": [
+    "Protocol",
+    "Interface",
+    "Confirms"
+  ],
+  "repository": {
+    "url": "https://github.com/petershaw/node-protocols.git",
+    "type": "git"
+  },
+  "dependencies": {
+    "chai": "^3.0.0",
+    "string": "^3.3.1",
+    "underscore": "^1.8.3"
+  }
 }

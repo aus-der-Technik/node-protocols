@@ -1,6 +1,8 @@
 /*global Buffer: false, clearInterval: false, clearTimeout: false, console: false, exports: false, global: false, module: false, process: false, querystring: false, require: false, setInterval: false, setTimeout: false, __filename: false, __dirname: false */
 
 var _ = require('underscore');
+var path = require('path');
+var S = require('string');
 
 var protocols = {
       protocolNames: []
@@ -17,7 +19,7 @@ var protocols = {
             var p = _.map(_.keys(m), function(e){
                 if( _.has(clazz, e)  ){
                     if( typeof clazz[e] === typeof m[e] ){
-                        return true;
+                        return S(path.basename(protocol)).chompRight(path.extname(protocol)).s;
                     }
                 }
                 if(breakOnError != false){
@@ -25,16 +27,18 @@ var protocols = {
                 }
                 return false;
             });
-            var c = _.every( p );
-            return c;
+            return {c: _.every( p ), n: _.unique(p)};
         });
-        var c = _.every( p );
 
-        that.protocolNames = _.compact( p );
-        if(c){
-            that.isValid = true;
-        }
-        return c;
+        that.isValid = _.every( _.map(p, function(e){ return e.c; }) );
+        //if(that.isValid){
+	        that.protocolNames =  _.compact(
+	        	_.flatten(
+	        		_.map(p, function(e){ return e.n; })
+	        	)
+	        );
+        //}
+        return that.isValid;
     }
 };
 module.exports = protocols;

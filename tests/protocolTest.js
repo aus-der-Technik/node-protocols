@@ -12,7 +12,7 @@ describe('Protocol', function () {
          chai.expect(test).to.have.property(
             'fulfillProtocols'
         );
-        chai.expect(test.confirmsToProtocols).to.have.length(0);
+        chai.expect(test.confirmsToProtocols).to.have.length(1);
         chai.expect(test.fulfillProtocols).to.be.false;
     });
     
@@ -40,7 +40,7 @@ describe('Tow protocols', function () {
         );
          chai.expect(test).to.have.property(
             'fulfillProtocols'
-        );
+        );	
         chai.expect(test.confirmsToProtocols).to.have.length(1);
         chai.expect(test.fulfillProtocols).to.be.false;
     });
