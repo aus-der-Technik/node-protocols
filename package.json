@@ -1,5 +1,5 @@
 {
-	"author": "aus der Technik - Simon & Wolff GbR",
+	"author": "aus der Technik - Simon & Simon GbR",
 	"main": "protocols.js",
 	"scripts": {
 		"test": "find ./tests -name '*Test.js' | xargs node_modules/mocha/bin/mocha -R spec"
