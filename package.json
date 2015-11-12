@@ -19,7 +19,7 @@
 		"Confirms"
 	],
 	"repository": {
-		"url": "https://github.com/petershaw/node-protocols.git",
+		"url": "https://github.com/aus-der-Technik/node-protocols.git",
 		"type": "git"
 	},
 	"dependencies": {
