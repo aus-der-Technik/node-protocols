@@ -1,6 +1,6 @@
 # Node-Protocols #
 
-a tiny implementation to fulfil protocols in nodejs.
+a tiny implementation to fulfil protocols (Interfaces) in nodejs.
 
 ## Description ##
 
@@ -74,3 +74,8 @@ Please help to improve the solution or send a Satoshi to 1DtvkCh28zqarTEUHtxs7gW
 
 ## Contact ##
 See https://www.ausdertechnik.de for more details.
+if you like this tool, spend a Satoshi to this address (We will buy more coffee from it):
+
+```
+1DtvkCh28zqarTEUHtxs7gWtutsv2Cnf9d
+```
