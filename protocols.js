@@ -32,11 +32,11 @@ var protocols = {
 
         that.isValid = _.every( _.map(p, function(e){ return e.c; }) );
         //if(that.isValid){
-	        that.protocolNames =  _.compact(
-	        	_.flatten(
-	        		_.map(p, function(e){ return e.n; })
-	        	)
-	        );
+            that.protocolNames =  _.compact(
+                _.flatten(
+                    _.map(p, function(e){ return e.n; })
+                )
+            );
         //}
         return that.isValid;
     }
