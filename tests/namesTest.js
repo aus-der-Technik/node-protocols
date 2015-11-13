@@ -1,10 +1,9 @@
-/*global Buffer: false, clearInterval: false, clearTimeout: false, console: false, exports: false, global: false, module: false, process: false, querystring: false, require: false, setInterval: false, setTimeout: false, __filename: false, __dirname: false */
+/*global Buffer: false, clearInterval: false, clearTimeout: false, console: false, exports: false, global: false, module: false, process: false, querystring: false, require: false, setInterval: false, describe: false, it: false, setTimeout: false, __filename: false, __dirname: false */
 
 var assert = require("assert")
     , chai = require("chai")
     , _ = require("underscore")
     ;
-;
 
 describe('Implementation', function () {
     it('should return the protocol name.', function () {
