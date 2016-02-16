@@ -102,7 +102,7 @@ protocols.implement =  function(clazz, protocols, breakOnError){
         );
     //}
     return that.isValid;
-}
+};
 
 module.exports = protocols;
 
