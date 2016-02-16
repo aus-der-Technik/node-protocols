@@ -8,9 +8,6 @@ A js object does not have any possibilities to implement a protocol (Interface) 
 Well, that is very good in many ways, but get extrem unhandy when implementing a pluggable system.
 **node-protocols** is a tiny object extension to allow a class implements one or more protocols.
 
-## Disclaimer ##
-
-This Module is a development draft. Please check, read, and contribute. Do not use this early version in a production branch!
 
 ## Example ##
 
@@ -22,7 +19,7 @@ module.exports.bar = function(){};
 module.exports.s = String();
 ```
 
-Than implement a module like:
+Than implement a module like this:
 
 ```
 var impl = module.exports = {
@@ -32,13 +29,13 @@ var impl = module.exports = {
 }
 ```
 
-To confirm that module to a protocol require node-protocols
+To confirm that this implementation confirms to a protocol, node-protocols is required.
 
 ```
 var protocol = require('node-protocols');
 ```
 
-and set your implementation against a protocol: 
+Finally a member named "protocol" must be set in your implementation that defines the protocol: 
 
 ```
 module.exports.protocol = protocol.implement(impl, 'myProtocol.js')
@@ -52,7 +49,7 @@ Implement does have 3 Parameters:
 * Protoccol-List
 * (optional) throw exception
 
-If the exeution of the application should not be terminated when a protocol is not fulfilled, than pass a "false" to the implement function:
+If the execution of the application should not be terminated when a protocol is not fulfilled, than pass a "false" to the implement function:
 
 ```
 module.exports.protocol = protocol.implement(impl, 'myProtocol.js', false)
