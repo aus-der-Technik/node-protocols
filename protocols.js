@@ -3,9 +3,9 @@
 /** @module node-protocols */
 
 var _ = require('underscore')
-	, path = require('path')
-	, S = require('string')
-	;
+    , path = require('path')
+    , S = require('string')
+    ;
 
 /**
  * @class
@@ -47,16 +47,16 @@ var _ = require('underscore')
  * <br />
  */
 var protocols = {
-	/**
-	 * @var 
-	 * Holds the protocol names that should be implemented to the module
-	 */
+    /**
+     * @var protocolNames
+     * @description Holds the protocol names that should be implemented to the module
+     */
     protocolNames: []
 
-	/**
-	 * @var 
-	 * Holds the boolean indicator if the module fulfills all protocols
-	 */    
+    /**
+     * @var 
+     * @description Holds the boolean indicator if the module fulfills all protocols
+     */    
     , isValid: false
 };
 
@@ -71,37 +71,37 @@ var protocols = {
  *                                 stops when a protocol is not completely implemented
  */
 protocols.implement =  function(clazz, protocols, breakOnError){
-	var that = this;
-	that.protocolNames = [];
-	that.isValid = false;   
-	if( typeof protocols === 'string' ){
-		protocols = [protocols];
-	}
-	var p = _.map(protocols, function(protocol){
-		var m = require(protocol);
-		var p = _.map(_.keys(m), function(e){
-			if( _.has(clazz, e)  ){
-				if( typeof clazz[e] === typeof m[e] ){
-					return S(path.basename(protocol)).chompRight(path.extname(protocol)).s;
-				}
-			}
-			if(breakOnError != false){
-				throw new Error("Module does not confirm protocol "+ protocol);
-			}
-			return false;
-		});
-		return {c: _.every( p ), n: _.unique(p)};
-	});
+    var that = this;
+    that.protocolNames = [];
+    that.isValid = false;   
+    if( typeof protocols === 'string' ){
+        protocols = [protocols];
+    }
+    var p = _.map(protocols, function(protocol){
+        var m = require(protocol);
+        var p = _.map(_.keys(m), function(e){
+            if( _.has(clazz, e)  ){
+                if( typeof clazz[e] === typeof m[e] ){
+                    return S(path.basename(protocol)).chompRight(path.extname(protocol)).s;
+                }
+            }
+            if(breakOnError != false){
+                throw new Error("Module does not confirm protocol "+ protocol);
+            }
+            return false;
+        });
+        return {c: _.every( p ), n: _.unique(p)};
+    });
 
-	that.isValid = _.every( _.map(p, function(e){ return e.c; }) );
-	//if(that.isValid){
-		that.protocolNames =  _.compact(
-			_.flatten(
-				_.map(p, function(e){ return e.n; })
-			)
-		);
-	//}
-	return that.isValid;
+    that.isValid = _.every( _.map(p, function(e){ return e.c; }) );
+    //if(that.isValid){
+        that.protocolNames =  _.compact(
+            _.flatten(
+                _.map(p, function(e){ return e.n; })
+            )
+        );
+    //}
+    return that.isValid;
 }
 
 module.exports = protocols;

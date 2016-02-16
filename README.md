@@ -70,7 +70,7 @@ Returns a boolean indicator "true" if all protocols are successfully implemented
 Yes, please help us to improve node-protocols and tell us your thoughts about this module.
 
 ## Contact ##
-See https://www.ausdertechnik.de for more details.
+See [https://www.ausdertechnik.de](https://www.ausdertechnik.de) for more details.
 if you like this tool, spend a Satoshi to this address (We will buy more coffee from it):
 
 ```

@@ -22,7 +22,7 @@ module.exports = function (grunt) {
 
         jsdoc: {
             dist: {
-                src: ['protocols.js'],
+                src: ['protocols.js', 'README.md'],
                 options: {
                     destination: 'docs',
                     template: "node_modules/minami",
