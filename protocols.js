@@ -118,7 +118,7 @@ protocols.implement =  function(clazz, protocols, breakOnError){
 
     that.isValid = _.every( _.map(p, function(e){ return e.c; }) );
     //if(that.isValid){
-        that.protocolNames =  _.compact(
+        clazz.protocolNames =  _.compact(
             _.flatten(
                 _.map(p, function(e){ return e.n; })
             )
@@ -142,7 +142,7 @@ module.exports = protocols;
 Object.defineProperty(Object.prototype, 'confirmsToProtocols', {
   set: function(){},
   get: function(){
-    return protocols.protocolNames || [];
+    return this.protocolNames || [];
   },
   configurable: true
 });
