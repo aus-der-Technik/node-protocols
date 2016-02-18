@@ -78,8 +78,17 @@ protocols.implement =  function(clazz, protocols, breakOnError){
     if( typeof protocols === 'string' ){
         protocols = [protocols];
     }
+    var classPrototypes = clazz.prototype;
+        
     var p = _.map(protocols, function(protocol){
         var m = require(protocol);
+        var s = m;
+        var protocolPrototypes = m.prototype;
+        
+        if(typeof m === 'function'){
+            m = m(); // ?
+        }
+        
         var p = _.map(_.keys(m), function(e){
             if( _.has(clazz, e)  ){
                 if( typeof clazz[e] === typeof m[e] ){
@@ -91,7 +100,20 @@ protocols.implement =  function(clazz, protocols, breakOnError){
             }
             return false;
         });
-        return {c: _.every( p ), n: _.unique(p)};
+        
+        var t =  _.map( _.keys(protocolPrototypes), function(e){
+            if( _.has(classPrototypes, e)  ){
+                 if( typeof clazz.prototype[e].constructor === typeof s.prototype[e].constructor ){
+                     return S(path.basename(protocol)).chompRight(path.extname(protocol)).s;
+                 }
+             }
+             if(breakOnError != false){
+                 throw new Error("Module does not confirm protocol "+ protocol);
+             }
+             return false;
+        }); 
+        p = p.concat(t);
+        return {c: _.every(p), n: _.unique(p)};
     });
 
     that.isValid = _.every( _.map(p, function(e){ return e.c; }) );
