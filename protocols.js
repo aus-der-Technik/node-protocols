@@ -91,7 +91,7 @@ protocols.implement =  function(clazz, protocols, breakOnError){
         
         var p = _.map(_.keys(m), function(e){
             if( _.has(clazz, e)  ){
-                if( typeof clazz[e] === typeof m[e] ){
+                if(  m[e] === undefined || (typeof clazz[e] === typeof m[e]) ){
                     return S(path.basename(protocol)).chompRight(path.extname(protocol)).s;
                 }
             }
