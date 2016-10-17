@@ -41,6 +41,12 @@ Finally a member named "protocol" must be set in your implementation that define
 module.exports.protocol = protocol.implement(impl, 'myProtocol.js')
 ```
 
+## Typpes ##
+
+It is allowed to use any kind of type as a definition. Object(), Array(), function(), String()... 
+
+A special case is ```undefined``` that is there to allow anything. 
+
 ## protocol.implement ##
 
 Implement does have 3 Parameters:
