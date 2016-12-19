@@ -80,5 +80,5 @@ See [https://www.ausdertechnik.de](https://www.ausdertechnik.de) for more detail
 if you like this tool, spend a Satoshi to this address (We will buy more coffee from it):
 
 ```
-1DtvkCh28zqarTEUHtxs7gWtutsv2Cnf9d
+1FaKEmpUz7S1g4v5qgmDWwQDzVYGBM6MLw
 ```
